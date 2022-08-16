@@ -17,6 +17,11 @@ jobs:
       - name: Publish with dotnet
         run: dotnet publish --configuration Release --output build
 
+      - uses: actions/upload-artifact@master
+        with:
+          name: website_build
+          path: build/wwwroot
+
   deploy:
     needs: build
 
@@ -43,4 +48,9 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v1#
+
+      - uses: actions/download-artifact@master
+        with:
+          name: website_build
+          path: build/wwwroot
