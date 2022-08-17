@@ -92,12 +92,12 @@ class MedianPriceHQ extends React.Component {
                     <footer className="card-footer">
                         <p className="card-footer-item">
                             <span>
-                                <a href={item.getGarlandToolsUrl()} className='is-size-6'>GarlandTools</a>
+                                <a href={item.getGarlandToolsUrl()} className='is-size-6' target="_blank" rel="noreferrer">GarlandTools</a>
                             </span>
                         </p>
                         <p className="card-footer-item">
                             <span>
-                                <a href={item.getUniversalisUrl()} className='is-size-6'>Universalis</a>
+                                <a href={item.getUniversalisUrl()} className='is-size-6' target="_blank" rel="noreferrer">Universalis</a>
                             </span>
                         </p>
                     </footer>
