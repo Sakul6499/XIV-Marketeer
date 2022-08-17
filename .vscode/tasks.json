@@ -4,37 +4,16 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Publish",
-            "type": "shell",
-            "command": "dotnet publish --configuration Release --output build",
-            "group": "build",
-            "problemMatcher": [
-                "$msCompile",
-                "$msvc"
-            ]
-        },
-        {
             "label": "Build",
             "type": "shell",
-            "command": "dotnet build",
-            "group": "build",
-            "problemMatcher": [
-                "$msCompile",
-                "$msvc"
-            ]
+            "command": "npm run build",
+            "group": "build"
         },
         {
             "label": "Run",
             "type": "shell",
-            "command": "dotnet run",
-            "group": "test",
-            "dependsOn": [
-                "Build"
-            ],
-            "problemMatcher": [
-                "$msCompile",
-                "$msvc"
-            ]
+            "command": "npm run start",
+            "group": "test"
         }
     ]
 }
