@@ -2,3 +2,7 @@
 bin/
 build/
 obj/
+
+# VSCode database
+.vscode/VS.*
+.vscode/*.log
