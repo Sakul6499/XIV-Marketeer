@@ -9,11 +9,13 @@ import "./index.css";
 
 // Pages
 import Home from "./pages/Home";
+
 // Config
 import CategoryGroups from "./pages/CategoryGroups"
 import CategoryNames from "./pages/CategoryNames"
 import ItemCategoryIds from "./pages/ItemCategoryIds"
 import ItemNames from "./pages/ItemNames"
+
 // General
 import MedianPriceHQ from "./pages/MedianPriceHQ";
 

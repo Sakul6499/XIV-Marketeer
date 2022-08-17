@@ -4,7 +4,7 @@ import React from 'react';
 // Components
 import Side from "../components/Side";
 
-class Home extends React.Component () {
+class Home extends React.Component {
     render() {
         return (
             <>
