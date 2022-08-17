@@ -39,13 +39,13 @@ else
     {
         Console.WriteLine("Cake");
         var client = new HttpClient();
-        client.
         foreach (var item in client.DefaultRequestHeaders)
         {
             Console.WriteLine(item);
         }
 
-        var URL = "https://jenkins.sakul6499.de/job/GitHub%20XIV-Marketeer/job/Jupyter/job/master/lastSuccessfulBuild/artifact/data/item_names.json";
+        var URL =
+        "https://jenkins.sakul6499.de/job/GitHub%20XIV-Marketeer/job/Jupyter/job/master/lastSuccessfulBuild/artifact/data/item_names.json";
         string responseBody = await client.GetStringAsync(URL);
         Console.WriteLine(responseBody);
     }

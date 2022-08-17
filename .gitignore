@@ -4,5 +4,5 @@ build/
 obj/
 
 # VSCode database
-.vscode/VS.*
+.vscode/VC.*
 .vscode/*.log
