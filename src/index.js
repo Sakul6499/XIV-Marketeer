@@ -2,7 +2,7 @@
 import * as React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Stylesheet
 import "./index.css";
@@ -25,12 +25,12 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        // Config
+        {/* Config */}
         <Route path="/category_groups" element={<CategoryGroups />} />
         <Route path="/category_names" element={<CategoryNames />} />
         <Route path="/item_category_ids" element={<ItemCategoryIds />} />
         <Route path="/item_names" element={<ItemNames />} />
-        // General
+        {/* General */}
         <Route path="/median_price_hq" element={<MedianPriceHQ />} />
       </Routes>
     </BrowserRouter>
