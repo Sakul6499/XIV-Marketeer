@@ -28,6 +28,9 @@
             "type": "shell",
             "command": "dotnet run",
             "group": "test",
+            "dependsOn": [
+                "Build"
+            ],
             "problemMatcher": [
                 "$msCompile",
                 "$msvc"
