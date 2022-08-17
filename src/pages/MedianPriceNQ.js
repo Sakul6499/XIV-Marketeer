@@ -70,10 +70,10 @@ class MedianPriceNQ extends React.Component {
             <>
                 <div className="card column is-one-third mb-4">
                     <div className="card-content">
-                        <p className="title">
+                        <p className="title is-size-4">
                             {(placement === 1 && ("1st place")) || (placement === 2 && ("2nd place")) || (placement === 3 && ("3rd place")) || (placement + "th place")}
                         </p>
-                        <p className="subtitle">
+                        <p className="subtitle is-size-6">
                             <p>{item.getName()} (#{item.getItemId()})</p>
                             Category: {item.getCategory()} (#{item.getCategoryId()})
                         </p>
