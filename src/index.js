@@ -18,6 +18,7 @@ import ItemNames from "./pages/ItemNames"
 
 // General
 import MedianPriceHQ from "./pages/MedianPriceHQ";
+import MedianPriceNQ from "./pages/MedianPriceNQ";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
@@ -34,6 +35,7 @@ root.render(
         <Route path="/item_names" element={<ItemNames />} />
         {/* General */}
         <Route path="/median_price_hq" element={<MedianPriceHQ />} />
+        <Route path="/median_price_nq" element={<MedianPriceNQ />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
