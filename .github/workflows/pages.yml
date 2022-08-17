@@ -30,8 +30,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - uses: ng-easy/npm-install@v2
-      - run: npm install
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+      - run: npm install --production --engine-strict --ignore-scripts --no-package-lock
       - run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v1
