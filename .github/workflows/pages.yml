@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: node --version
-      - run: npm install --production --engine-strict --ignore-scripts --no-package-lock
+      - run: npm install --engine-strict --ignore-scripts --no-package-lock --omit=dev
       - run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v1
