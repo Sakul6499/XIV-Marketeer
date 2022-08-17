@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Side() {
     return (
         <>
-            <aside className="menu">
+            <aside className="menu ml-2 mt-2">
                 <p className="menu-label is-size-4">XIV Marketeer</p>
                 <p className="menu-label">Config</p>
                 <ul className="menu-list">
