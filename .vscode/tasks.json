@@ -7,13 +7,31 @@
             "label": "Publish",
             "type": "shell",
             "command": "dotnet publish --configuration Release --output build",
-            "problemMatcher": []
+            "group": "build",
+            "problemMatcher": [
+                "$msCompile",
+                "$msvc"
+            ]
         },
         {
             "label": "Build",
             "type": "shell",
             "command": "dotnet build",
-            "problemMatcher": []
+            "group": "build",
+            "problemMatcher": [
+                "$msCompile",
+                "$msvc"
+            ]
+        },
+        {
+            "label": "Run",
+            "type": "shell",
+            "command": "dotnet run",
+            "group": "test",
+            "problemMatcher": [
+                "$msCompile",
+                "$msvc"
+            ]
         }
     ]
 }
