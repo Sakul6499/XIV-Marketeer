@@ -5,6 +5,7 @@ function Side() {
         <>
             <aside className="menu ml-2 mt-2">
                 <p className="menu-label is-size-4">XIV Marketeer</p>
+                <p className="menu-label">Server: Spriggan</p>
                 <p className="menu-label">Config</p>
                 <ul className="menu-list">
                     <li><Link to="/category_groups">Category Groups</Link></li>
