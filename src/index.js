@@ -17,8 +17,7 @@ import ItemCategoryIds from "./pages/ItemCategoryIds"
 import ItemNames from "./pages/ItemNames"
 
 // General
-import MedianPriceHQ from "./pages/MedianPriceHQ";
-import MedianPriceNQ from "./pages/MedianPriceNQ";
+import BasicItemsPage from "./pages/BasicItemsPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root")
@@ -34,8 +33,8 @@ root.render(
         <Route path="/item_category_ids" element={<ItemCategoryIds />} />
         <Route path="/item_names" element={<ItemNames />} />
         {/* General */}
-        <Route path="/median_price_hq" element={<MedianPriceHQ />} />
-        <Route path="/median_price_nq" element={<MedianPriceNQ />} />
+        <Route path="/median_price_hq" element={<BasicItemsPage title="Median Price (HQ)" query_url="https://jenkins.sakul6499.de/job/GitHub%20XIV-Marketeer/job/Jupyter/job/main//lastSuccessfulBuild/artifact/data/median_price_hq.json" />} />
+        <Route path="/median_price_nq" element={<BasicItemsPage title="Median Price (NQ)" query_url="https://jenkins.sakul6499.de/job/GitHub%20XIV-Marketeer/job/Jupyter/job/main//lastSuccessfulBuild/artifact/data/median_price_nq.json" />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

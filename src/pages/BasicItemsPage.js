@@ -12,19 +12,30 @@ import PageTitleComponent from "../components/PageTitleComponent";
 import Item from "../classes/Item";
 import ItemsComponent from '../components/ItemsComponent';
 
-export default class MedianPriceHQ extends React.Component {
+export default class BasicItemsPage extends React.Component {
 
     constructor(props) {
         super(props);
+
+        this.title = this.props.title;
+        if (this.title == null) {
+            throw new Error("No title set!");
+        }
+
+        this.query_url = this.props.query_url;
+        if (this.query_url == null) {
+            throw new Error("No query_url set!");
+        }
+
         this.state = { items: null };
     }
 
     componentDidMount() {
-        if (this.state.items === null) {
-            axios.get('https://jenkins.sakul6499.de/job/GitHub%20XIV-Marketeer/job/Jupyter/job/main//lastSuccessfulBuild/artifact/data/median_price_hq.json')
+        if (this.state.items === null && this.query_url != null) {
+            axios.get(this.query_url)
                 .then(response => {
                     var data = response.data;
-                    console.log('Loaded ' + Object.keys(data).length + ' items.');
+                    console.log('Received information about ' + Object.keys(data).length + ' items.');
 
                     var items = [];
                     Object.keys(data).forEach(item_id => {
@@ -33,9 +44,11 @@ export default class MedianPriceHQ extends React.Component {
                         items.push(item);
                     });
 
+                    console.log("Loaded " + items.length + " items.");
                     this.setState({ items: items });
                 })
                 .catch(err => {
+                    console.log("Encountered an error while converting JSON to Item:");
                     console.log(err);
                 })
         }
@@ -49,7 +62,7 @@ export default class MedianPriceHQ extends React.Component {
                         <Side />
                     </div>
                     <div className="column">
-                        <PageTitleComponent title='Median Price (HQ)' />
+                        <PageTitleComponent title={this.title} />
                         <ItemsComponent items={this.state.items} />
                     </div>
                 </main>
