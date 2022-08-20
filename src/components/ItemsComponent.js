@@ -26,7 +26,7 @@ export default function ItemsComponent(args) {
         return (
             <>
                 <div className="columns is-multiline is-mobile">
-                    {items.map((item) => <ItemComponent key={'item_' + count} item={item} placement={++count} />)}
+                    {items.map((item) => <ItemComponent key={crypto.randomUUID()} item={item} placement={++count} />)}
                 </div>
             </>
         );

@@ -17,6 +17,8 @@ export default class BasicItemsPage extends React.Component {
     constructor(props) {
         super(props);
 
+        console.log(this.props);
+
         this.title = this.props.title;
         if (this.title == null) {
             throw new Error("No title set!");
@@ -31,6 +33,7 @@ export default class BasicItemsPage extends React.Component {
     }
 
     componentDidMount() {
+        console.log("Mounted!");
         if (this.state.items === null && this.query_url != null) {
             axios.get(this.query_url)
                 .then(response => {
@@ -54,10 +57,17 @@ export default class BasicItemsPage extends React.Component {
         }
     }
 
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("Should update? " + (nextProps.title !== this.props.title || nextState.items !== this.state.items));
+        console.log(nextProps);
+        console.log(nextState);
+        return nextProps.title !== this.props.title || nextState.items !== this.state.items;
+    }
+
     render() {
         return (
             <>
-                <main className="columns mr-2">
+                <main className="columns mr-2" key={this.title}>
                     <div className="column is-one-fifth">
                         <Side />
                     </div>
