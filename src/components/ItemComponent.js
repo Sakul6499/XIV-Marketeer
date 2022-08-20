@@ -10,7 +10,8 @@ export default function ItemComponent(args) {
                         {(placement === 1 && ("1st place")) || (placement === 2 && ("2nd place")) || (placement === 3 && ("3rd place")) || (placement + "th place")}
                     </p>
                     <p className="subtitle is-size-6">
-                        <p>{item.getName()} (#{item.getItemId()})</p>
+                        {item.getName()} (#{item.getItemId()})
+                        <br />
                         Category: {item.getCategory()} (#{item.getCategoryId()})
                     </p>
                 </div>
