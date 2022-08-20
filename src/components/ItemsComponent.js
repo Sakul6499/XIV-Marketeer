@@ -15,7 +15,7 @@ export default function ItemsComponent(args) {
                                 Loading ...
                             </p>
                             <p className="subtitle">
-                                This may take a while based on your browsers performance!
+                                This may take a moment depending on your browsers performance!
                             </p>
                         </div>
                     </div>
