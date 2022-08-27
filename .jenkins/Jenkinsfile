@@ -26,10 +26,8 @@ pipeline {
                 }
             }
             steps {
-                sh 'npm cache clean --force'
-                sh "export npm_config_cache=\$(pwd)/local_cache"
-                sh 'npm install'
-                sh 'npm run build'
+                sh 'export npm_config_cache=\$(pwd)/local_cache && npm install'
+                sh 'export npm_config_cache=\$(pwd)/local_cache && npm run build'
             }
         }
     }
