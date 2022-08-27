@@ -1,0 +1,22 @@
+pipeline {
+    agent {
+        label 'docker'
+    }
+    options {
+        disableConcurrentBuilds()
+    }
+    stages {
+        stage('NPM Version') {
+            agent {
+                docker { 
+                    image 'nodejs:latest' 
+                    reuseNode true
+                }
+            }
+            steps {
+                sh 'nodejs --version'
+                sh 'npm --version'
+            }
+        }
+    }
+}
