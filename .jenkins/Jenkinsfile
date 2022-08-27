@@ -18,5 +18,27 @@ pipeline {
                 sh 'npm --version'
             }
         }
+        stage('Dependencies') {
+            agent {
+                docker { 
+                    image 'node:latest' 
+                    reuseNode true
+                }
+            }
+            steps {
+                sh 'npm install'
+            }
+        }
+        stage('Build') {
+            agent {
+                docker { 
+                    image 'node:latest' 
+                    reuseNode true
+                }
+            }
+            steps {
+                sh 'npm run build'
+            }
+        }
     }
 }
