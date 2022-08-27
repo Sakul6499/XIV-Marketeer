@@ -18,17 +18,6 @@ pipeline {
                 sh 'npm --version'
             }
         }
-        stage('Dependencies') {
-            agent {
-                docker { 
-                    image 'node:current-alpine' 
-                    reuseNode true
-                }
-            }
-            steps {
-                sh 'npm install'
-            }
-        }
         stage('Build') {
             agent {
                 docker { 
@@ -37,6 +26,8 @@ pipeline {
                 }
             }
             steps {
+                sh 'npm cache clean --force'
+                sh 'npm install'
                 sh 'npm run build'
             }
         }
